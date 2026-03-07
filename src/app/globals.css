@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #e7e5e4;
+  background: #0c0a09;
+  font-family: system-ui, -apple-system, sans-serif;
+}

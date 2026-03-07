@@ -1,0 +1,203 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── AUTHENTICATION ───
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String?
+  emailVerified DateTime?
+  image         String?
+  role          UserRole  @default(LEARNER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts    Account[]
+  sessions    Session[]
+  enrollments Enrollment[]
+  progress    StepProgress[]
+  responses   UserResponse[]
+
+  @@index([email])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum UserRole {
+  LEARNER
+  AUTHOR
+  ADMIN
+}
+
+// ─── CONTENT STRUCTURE ───
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String   @db.Text
+  published   Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sequences   Sequence[]
+  enrollments Enrollment[]
+
+  @@index([slug])
+  @@index([published])
+}
+
+model Sequence {
+  id          String   @id @default(cuid())
+  courseId    String
+  title       String
+  slug        String
+  description String?  @db.Text
+  sortOrder   Int      @default(0)
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  steps  Step[]
+
+  @@unique([courseId, slug])
+  @@index([courseId])
+}
+
+model Step {
+  id         String   @id @default(cuid())
+  sequenceId String
+  type       StepType
+  sortOrder  Int      @default(0)
+  content    Json
+  metadata   Json?
+
+  // Branching support
+  nextStepId  String?
+  branchRules Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sequence  Sequence       @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
+  progress  StepProgress[]
+  responses UserResponse[]
+
+  @@index([sequenceId])
+  @@index([sequenceId, sortOrder])
+}
+
+enum StepType {
+  INSTRUCTION
+  MULTIPLE_CHOICE
+  MULTI_SELECT
+  FREE_RESPONSE
+  FILL_IN_BLANK
+  ORDERING
+  MATCHING
+  TRANSLATION
+  RHETORICAL_ANALYSIS
+  CHECKPOINT
+}
+
+// ─── LEARNER PROGRESS ───
+
+model Enrollment {
+  id         String   @id @default(cuid())
+  userId     String
+  courseId    String
+  enrolledAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+}
+
+model StepProgress {
+  id          String         @id @default(cuid())
+  userId      String
+  stepId      String
+  status      ProgressStatus @default(NOT_STARTED)
+  attempts    Int            @default(0)
+  bestScore   Float?
+  lastAttempt DateTime?
+  completedAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  step Step @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, stepId])
+  @@index([userId])
+  @@index([stepId])
+}
+
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  SKIPPED
+}
+
+model UserResponse {
+  id        String   @id @default(cuid())
+  userId    String
+  stepId    String
+  response  Json
+  score     Float?
+  feedback  Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  step Step @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@index([userId, stepId])
+  @@index([createdAt])
+}
