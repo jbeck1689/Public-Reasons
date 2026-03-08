@@ -41,17 +41,20 @@ export function FreeResponseStep({
         onChange={(e) => setResponse(e.target.value)}
         disabled={submitted}
         placeholder="Write your response here..."
+        aria-label="Your response"
         className="w-full h-36 p-4 bg-stone-800 border border-stone-700 rounded text-stone-300 placeholder-stone-600 focus:border-teal-600 focus:outline-none resize-y"
       />
 
-      {submitted && content.sampleAnswer && (
-        <div className="p-4 rounded border border-stone-600 bg-stone-800 bg-opacity-50">
-          <p className="text-sm font-medium text-teal-400 mb-2">Debrief:</p>
-          <p className="text-stone-400 text-sm leading-relaxed">
-            {content.sampleAnswer}
-          </p>
-        </div>
-      )}
+      <div aria-live="polite" aria-atomic="true">
+        {submitted && content.sampleAnswer && (
+          <div className="p-4 rounded border border-stone-600 bg-stone-800 bg-opacity-50">
+            <p className="text-sm font-medium text-teal-400 mb-2">Debrief:</p>
+            <p className="text-stone-400 text-sm leading-relaxed">
+              {content.sampleAnswer}
+            </p>
+          </div>
+        )}
+      </div>
 
       <div className="pt-2">
         {!submitted ? (

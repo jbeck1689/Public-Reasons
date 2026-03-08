@@ -128,6 +128,31 @@ export const CheckpointContentSchema = z.object({
   passingScore: z.number().min(0).max(1).optional().default(0.8),
 });
 
+// ─── STEP METADATA SCHEMAS ───
+
+export const LlmConfigSchema = z.object({
+  llmEnabled: z.boolean().default(false),
+  evaluationPrompt: z.string().optional(),
+  rubricCriteria: z.array(z.string()).optional(),
+  feedbackTone: z.union([
+    z.literal("encouraging"),
+    z.literal("direct"),
+    z.literal("socratic"),
+  ]).optional(),
+  maxTokens: z.number().int().positive().optional(),
+});
+
+export const StepMetadataSchema = z.object({
+  llmConfig: LlmConfigSchema.optional(),
+  hints: z.array(z.string()).optional(),
+  difficulty: z.union([
+    z.literal("easy"),
+    z.literal("medium"),
+    z.literal("hard"),
+  ]).optional(),
+  tags: z.array(z.string()).optional(),
+}).passthrough(); // Allow additional metadata fields
+
 // ─── STEP TYPE TO SCHEMA MAP ───
 
 const StepContentSchemas: { [key: string]: z.ZodType } = {
@@ -205,7 +230,7 @@ export function validateStepContent(
   }
 
   const issues = result.error.issues
-    .map((i: { path: (string | number)[]; message: string }) => `  - ${i.path.join(".")}: ${i.message}`)
+    .map((i) => `  - ${i.path.join(".")}: ${i.message}`)
     .join("\n");
   return { success: false, error: `Content validation failed:\n${issues}` };
 }

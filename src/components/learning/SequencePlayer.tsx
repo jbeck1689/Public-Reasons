@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import { InstructionStep } from "./InstructionStep";
 import { MultipleChoiceStep } from "./MultipleChoiceStep";
@@ -26,10 +26,18 @@ interface SequenceProps {
 export function SequencePlayer({ sequence }: SequenceProps) {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [completed, setCompleted] = useState(false);
+  const stepContentRef = useRef<HTMLDivElement>(null);
 
   const steps = sequence.steps;
   const progress =
     ((currentStepIndex + (completed ? 1 : 0)) / steps.length) * 100;
+
+  // Move focus to step content when navigating between steps
+  useEffect(() => {
+    if (stepContentRef.current) {
+      stepContentRef.current.focus();
+    }
+  }, [currentStepIndex]);
 
   const handleNext = useCallback(() => {
     if (currentStepIndex < steps.length - 1) {
@@ -136,7 +144,14 @@ export function SequencePlayer({ sequence }: SequenceProps) {
               {currentStepIndex + 1} / {steps.length}
             </span>
           </div>
-          <div className="h-1 bg-stone-800 rounded-full overflow-hidden">
+          <div
+            className="h-1 bg-stone-800 rounded-full overflow-hidden"
+            role="progressbar"
+            aria-valuenow={Math.round(progress)}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={`Sequence progress: ${Math.round(progress)}%`}
+          >
             <div
               className="h-full bg-teal-700 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
@@ -146,7 +161,12 @@ export function SequencePlayer({ sequence }: SequenceProps) {
       </div>
 
       {/* Step content */}
-      <div className="max-w-2xl mx-auto px-6 py-8">
+      <div
+        ref={stepContentRef}
+        tabIndex={-1}
+        className="max-w-2xl mx-auto px-6 py-8 outline-none"
+        aria-label={`Step ${currentStepIndex + 1} of ${steps.length}: ${stepLabel}`}
+      >
         <div className="mb-4">
           <span className="text-xs font-medium text-teal-600 tracking-wider uppercase">
             {stepLabel}

@@ -57,7 +57,7 @@ export default function DashboardLayout({
       </header>
 
       {/* Content */}
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
     </div>
   );
 }

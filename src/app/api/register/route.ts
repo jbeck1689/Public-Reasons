@@ -2,9 +2,22 @@ import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
 import { prisma } from "@/lib/db";
 import { registerSchema } from "@/lib/validations/auth";
+import { registerLimiter } from "@/lib/utils/rate-limit";
 
 export async function POST(request: Request) {
   try {
+    // Rate limit: 10 registrations/hour per IP
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      "unknown";
+    const rateCheck = registerLimiter.check(ip);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Too many registration attempts. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
 
     // Bouncer #1: validate the shape and content of the input

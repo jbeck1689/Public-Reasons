@@ -49,7 +49,11 @@ export function MultipleChoiceStep({
     <div className="space-y-4">
       <Markdown text={content.prompt} />
 
-      <div className="space-y-2 pt-2">
+      <div
+        className="space-y-2 pt-2"
+        role="radiogroup"
+        aria-label="Answer choices"
+      >
         {content.options.map((option) => {
           let borderColor = "border-stone-700 hover:border-stone-500";
           let bg = "bg-stone-800 bg-opacity-50";
@@ -74,6 +78,8 @@ export function MultipleChoiceStep({
               key={option.id}
               onClick={() => !submitted && setSelected(option.id)}
               disabled={submitted}
+              role="radio"
+              aria-checked={option.id === selected}
               className={`w-full text-left p-4 rounded border ${borderColor} ${bg} transition-all ${
                 submitted ? "cursor-default" : "cursor-pointer"
               }`}
@@ -84,30 +90,32 @@ export function MultipleChoiceStep({
         })}
       </div>
 
-      {submitted && selectedOption && (
-        <div
-          className={`p-4 rounded border ${
-            isCorrect
-              ? "border-emerald-600 bg-emerald-900 bg-opacity-20"
-              : "border-red-500 bg-red-900 bg-opacity-20"
-          }`}
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <span
-              className={`font-semibold ${
-                isCorrect ? "text-emerald-400" : "text-red-400"
-              }`}
-            >
-              {isCorrect ? "You saw through it." : "It got you. Here's how:"}
-            </span>
+      <div aria-live="polite" aria-atomic="true">
+        {submitted && selectedOption && (
+          <div
+            className={`p-4 rounded border ${
+              isCorrect
+                ? "border-emerald-600 bg-emerald-900 bg-opacity-20"
+                : "border-red-500 bg-red-900 bg-opacity-20"
+            }`}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span
+                className={`font-semibold ${
+                  isCorrect ? "text-emerald-400" : "text-red-400"
+                }`}
+              >
+                {isCorrect ? "You saw through it." : "It got you. Here's how:"}
+              </span>
+            </div>
+            {selectedOption.explanation && (
+              <p className="text-stone-400 text-sm leading-relaxed">
+                {selectedOption.explanation}
+              </p>
+            )}
           </div>
-          {selectedOption.explanation && (
-            <p className="text-stone-400 text-sm leading-relaxed">
-              {selectedOption.explanation}
-            </p>
-          )}
-        </div>
-      )}
+        )}
+      </div>
 
       <div className="pt-2">
         {!submitted ? (
