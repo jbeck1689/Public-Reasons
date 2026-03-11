@@ -1,8 +1,8 @@
 # Project Brief — Practical Reasoning & Language Learning App
 
-**Last updated:** March 8, 2026
-**Status:** Phase 4 files complete. GCP setup required before first deploy.
-**Next action:** Follow DEPLOYMENT.md to set up GCP and trigger first deploy.
+**Last updated:** March 10, 2026
+**Status:** Phase 4 complete. App is live. Phase 5 in progress.
+**Next action:** Build Course 2 content ("Think Before You Decide"), then soft launch with real users.
 
 ---
 
@@ -87,37 +87,59 @@ framing — the learner catches tricks, not studies textbooks.
 - `src/app/layout.tsx` — skip-to-content link
 - `src/app/(dashboard)/layout.tsx` — main-content id
 
-## Phase 4 — Complete (files ready, GCP setup pending)
+## Phase 4 — Complete
 
-### What was built
+### What happened
 
-- **Dockerfile:** Multi-stage build (deps → builder → runner). Runs as
-  non-root user `nextjs`. Standalone output. ~100MB final image.
-- **cloudbuild.yaml:** Automated CI/CD pipeline. Push to main triggers
-  build → push to Artifact Registry → deploy to Cloud Run.
-- **.dockerignore:** Excludes secrets, node_modules, .git, tests, docs.
-- **DEPLOYMENT.md:** Step-by-step GCP setup guide with all commands.
-- **Key decision: skip Cloud SQL and Redis.** Neon stays as production
-  database. In-memory rate limiting for soft launch. Saves ~$25-60/month
-  with zero tradeoffs at current scale.
-- **Security checkpoint passed.** Non-root container, no secrets in
-  image, database SSL via Neon default, Secret Manager for all env vars.
+GCP billing account setup was blocked by persistent Google console
+bugs. Pivoted to Vercel for deployment. This eliminated Docker,
+Cloud Build, Cloud Run, Secret Manager, and all GCP-specific config.
 
-### What the developer needs to do
+### What was built/changed
 
-Follow DEPLOYMENT.md steps 1-8 in the GCP console. Estimated time:
-30-45 minutes for first-time setup. After that, every push to main
-auto-deploys.
+- **Deployment platform:** Vercel (free Hobby tier). Auto-deploys
+  on push to main from GitHub.
+- **Build script:** Updated to `prisma generate && next build`.
+- **Removed `output: "standalone"`** from next.config.mjs (not
+  needed for Vercel).
+- **CSP fix:** Added `'unsafe-inline'` to `script-src` so Next.js
+  hydration scripts run. Nonce-based CSP deferred to later hardening.
+- **Environment variables:** DATABASE_URL, NEXTAUTH_SECRET,
+  NEXTAUTH_URL set in Vercel dashboard.
+- **Database seeded to Neon** from Codespaces.
+- **Rhetorical Devices course:** Full course built and imported.
+  8 sequences, 64 steps. Covers anaphora through real-world
+  synthesis. Content file: `content/course-2-rhetorical-devices.json`.
+
+### Live URLs
+
+- Production: https://public-reasons.vercel.app
+- GitHub: github.com/jbeck1689/Public-Reasons
+
+### Files still in repo but unused
+
+- `Dockerfile` — kept for future container deployment if needed
+- `cloudbuild.yaml` — kept for future GCP migration if needed
+- `DEPLOYMENT.md` — GCP-specific, no longer the active deploy path
+
+### Key decisions
+
+- **Vercel over GCP.** Dramatically simpler for soft launch. No
+  Docker, no IAM, no billing issues. Free tier covers current needs.
+- **GCP not abandoned.** Can revisit if Vercel limits become real.
+  Docker and Cloud Build config preserved in repo.
+- **CSP loosened for now.** `script-src 'unsafe-inline'` is a real
+  tradeoff. Nonce-based CSP is the proper fix, deferred to hardening.
 
 ## Key Decisions
 
-- **Neon as production database.** Skipped Cloud SQL. No migration
-  needed, SSL by default, free tier. Revisit if scale demands it.
+- **Vercel for deployment.** Replaced GCP. Free tier, auto-deploy,
+  zero infrastructure management.
+- **Neon as production database.** Free tier, SSL by default.
 - **Skip Redis for production.** In-memory rate limiting for soft launch.
 - **Skip admin UI.** Import pipeline replaces it.
 - **LLM as primary content engine.** Developer is learner/QA, not author.
 - **Practical reasoning first.** Other domains come after Course 1.
-- **In-memory rate limiting for dev.** Swap for Redis before production.
 - **Zod 4 in use.** Project uses Zod 4.3.6.
 - **tsx over ts-node.** Standalone scripts use `npx tsx`.
 - **App name:** Still undecided.
@@ -126,18 +148,35 @@ auto-deploys.
 
 - Code: github.com/jbeck1689/Public-Reasons
 - Database: Neon PostgreSQL (free tier)
+- Deployment: Vercel (free Hobby tier)
 - Development: GitHub Codespaces
 
 ## Stack
 
 Next.js 14+, TypeScript, PostgreSQL, Prisma, NextAuth v4, Tailwind,
-Zustand, Zod 4. Google Cloud Run for deployment. Neon for database.
+Zustand, Zod 4. Vercel for deployment. Neon for database.
+
+## Content Status
+
+| Course | Sequences | Steps | Status |
+|--------|-----------|-------|--------|
+| Don't Get Tricked | 8 | 64 | Live |
+| Rhetorical Devices | 8 | 64 | Live |
+| Think Before You Decide | 0 | 0 | Next |
+
+Known issue: Pressure Play sequence may have duplicate steps from
+seed script. Re-run Course 1 import to fix if needed.
+
+Orphaned sequence `intro-rhetorical-devices` from seed script may
+still exist in database. Harmless, clean up when convenient.
 
 ## What's NOT Built Yet
 
-- GCP project setup and first deploy (developer task, see DEPLOYMENT.md)
-- Custom domain + SSL (Phase 4, optional)
-- Full content load and soft launch (Phase 5)
+- Course 2: "Think Before You Decide" content (Phase 5, next)
+- User feedback mechanism (Phase 5)
+- Soft launch with real users (Phase 5)
+- Custom domain (optional)
+- Nonce-based CSP to replace unsafe-inline (hardening)
 - LLM-powered feedback on free responses (Phase 6)
 
 ## Documents in This Project
