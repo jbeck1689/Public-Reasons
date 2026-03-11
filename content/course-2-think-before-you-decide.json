@@ -1,0 +1,873 @@
+{
+  "title": "Think Before You Decide — Reasoning Under Uncertainty",
+  "slug": "think-before-you-decide",
+  "description": "Your brain is full of shortcuts that served you well on the savanna and betray you in the modern world. This course teaches you to catch your own reasoning errors before they cost you — in money, time, relationships, and opportunities.",
+  "sortOrder": 3,
+  "published": true,
+  "sequences": [
+    {
+      "title": "Base Rates",
+      "slug": "base-rates",
+      "description": "Why your gut is wrong about probability — and why dramatic stories override boring statistics.",
+      "sortOrder": 1,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "Here's a puzzle.\n\nA test for a rare disease is 99% accurate. You test positive. What are the odds you actually have the disease?\n\nIf you said 99%, you're in good company — and you're wrong. Possibly very wrong.\n\nThe answer depends on something most people forget to ask: **how rare is the disease?** If 1 in 10,000 people have it, and you test 10,000 people with a 99% accurate test, you'll get about 100 false positives and 1 true positive. Your odds of actually being sick? About 1 in 100.\n\nThe 99% accuracy was real. Your intuition was wrong. The missing piece was the **base rate** — how common the thing is in the first place.\n\nThis sequence is about why base rates matter and why your brain ignores them."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## Why Your Brain Skips the Base Rate\n\nBase rate neglect is one of the most robust findings in cognitive science. When people are given both a vivid story and a dry statistic, the story wins almost every time.\n\nImagine you meet someone at a party. They're quiet, wear glasses, and love puzzles. Are they more likely to be a librarian or a salesperson?\n\nMost people say librarian. The description *sounds* like a librarian. But there are roughly 20 times more salespeople than librarians. Even if the description fits librarians better, the sheer number of salespeople means it's statistically more likely you've met a quiet salesperson who likes puzzles.\n\nYour brain did something called **representativeness matching** — it compared the description to a stereotype and ignored the underlying numbers. The description felt like a librarian, so you went with the feeling.\n\nThis isn't a failure of intelligence. It's a feature of how human cognition works. Your brain is built for pattern matching, not probability calculation. That was useful for quick decisions in dangerous environments. It's a liability when the stakes require accuracy."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "A city has two taxi companies: Blue Cab (85% of all taxis) and Green Cab (15%). A witness to a hit-and-run says the taxi was green. Tests show the witness correctly identifies taxi colors 80% of the time.\n\nWhat's more likely?",
+            "options": [
+              {
+                "id": "a",
+                "text": "The taxi was green — the witness is 80% accurate, so we should trust their identification.",
+                "isCorrect": false,
+                "explanation": "The witness's accuracy is real, but you're ignoring the base rate. There are far more blue taxis than green ones. If you run the math: out of 100 accidents, 85 involve blue taxis and 15 involve green ones. The witness would correctly identify 12 of the 15 green taxis — but would also incorrectly call 17 of the 85 blue taxis 'green.' That means of the 29 times the witness says 'green,' only 12 are actually green. The taxi is more likely blue, despite the witness saying green."
+              },
+              {
+                "id": "b",
+                "text": "It's actually more likely the taxi was blue, because there are so many more blue taxis that even with an 80% accurate witness, the base rate dominates.",
+                "isCorrect": true,
+                "explanation": "This is counterintuitive but correct. The base rate (85% blue) is so strong that it overwhelms the eyewitness evidence. The witness saying 'green' shifts the probability, but not enough to overcome the starting imbalance. The probability the taxi was actually green is about 41% — better than the base rate of 15%, but still less than 50%. This is Bayesian reasoning, and it's the antidote to base rate neglect."
+              },
+              {
+                "id": "c",
+                "text": "There's no way to know — eyewitness testimony is unreliable so we should ignore it entirely.",
+                "isCorrect": false,
+                "explanation": "Overcorrection. The eyewitness evidence isn't worthless — it shifts the probability significantly (from 15% to about 41%). The mistake isn't in trusting the witness at all; it's in trusting the witness to the exclusion of the base rate. Both pieces of information matter. The skill is combining them, not choosing one over the other."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## Base Rates in Everyday Life\n\nBase rate neglect isn't just a math puzzle. It shapes real decisions constantly.\n\n**Hiring:** \"This candidate went to a top school and gave a great interview.\" But what's the base rate of successful employees from that school? If it's the same as everywhere else, the pedigree is noise.\n\n**Investing:** \"This stock doubled last year!\" But what percentage of stocks that doubled last year double again? The base rate for consecutive years of outsized returns is very low.\n\n**Health scares:** \"My friend's uncle got cancer from his cell phone.\" The base rate of cancer among cell phone users is the same as the general population. One vivid story isn't evidence.\n\n**Stereotyping:** \"That neighborhood is dangerous.\" What's the actual crime rate per capita versus your city's average? Vivid news stories about one incident can make a neighborhood feel dangerous when the base rate says otherwise.\n\nThe pattern is always the same: a compelling individual case overrides the boring but more informative background rate. The fix is always the same question: **what's the base rate?**"
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou're deciding whether to start a business. A friend who recently launched a successful startup says:\n\n> *\"Everyone told me it wouldn't work, but I believed in myself and now we're profitable. You just have to commit.\"*\n\nWhat's the base rate problem here?",
+            "options": [
+              {
+                "id": "a",
+                "text": "There's no base rate problem — your friend's experience is relevant because they actually did it.",
+                "isCorrect": false,
+                "explanation": "Your friend's experience is real but it's a sample size of one drawn from the success column. You're not hearing from the much larger group of people who also 'believed in themselves and committed' and failed. The base rate of startup failure is roughly 90% in the first five years. Your friend's story is vivid and personal; the base rate is boring and statistical. Guess which one your brain weights more heavily."
+              },
+              {
+                "id": "b",
+                "text": "You're hearing from a survivor. The base rate of startup failure is very high, and the people who failed with the same attitude aren't at this dinner party telling you about it.",
+                "isCorrect": true,
+                "explanation": "This is called survivorship bias — a specific form of base rate neglect. Your friend's advice sounds compelling because they're living proof it works. But the cemetery of failed startups is full of people who also believed in themselves and committed. The base rate (most startups fail) is invisible because failures don't write blog posts or give advice at dinner parties. Your friend's story is data — but it's a data point, not the dataset."
+              },
+              {
+                "id": "c",
+                "text": "The base rate says most startups fail, so you definitely shouldn't start one.",
+                "isCorrect": false,
+                "explanation": "Base rates inform decisions; they don't make them. The base rate of startup failure means you should go in with eyes open, plan for common failure modes, and not let one friend's success story be your primary evidence. It doesn't mean the endeavor is wrong — it means the confidence your friend's story generates is disproportionate to the evidence it provides."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## The Bayesian Mindset\n\nThe formal tool for incorporating base rates is called Bayes' theorem. You don't need to learn the math (though it's not hard). You need the mindset:\n\n**Start with the base rate.** Before evaluating any specific evidence, ask: how common is this thing in general? This is your starting point — your \"prior.\"\n\n**Update proportionally.** New evidence should move your estimate, but how much it moves depends on how strong the evidence is relative to the base rate. A 99% accurate test is strong evidence. A friend's anecdote is weak evidence. A gut feeling is almost no evidence at all.\n\n**Resist the vivid.** Your brain will always overweight stories, images, and emotions relative to statistics. Knowing this doesn't fix it — but it does give you a moment to pause and ask the question.\n\nThe question that captures the entire Bayesian mindset is this: **\"Before I saw this evidence, how likely was this to be true?\"** If the answer is \"very unlikely,\" then even pretty good evidence shouldn't make you certain."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of a belief you hold or a decision you've made that might be influenced by base rate neglect. Maybe you chose a career path because of a successful person you admire, or you worry about a risk because of a vivid story.\n\nDescribe the belief or decision, identify the vivid evidence that influenced you, and then ask: what's the actual base rate? Does knowing the base rate change how you think about it?",
+            "sampleAnswer": "Strong responses identify a real personal example and honestly assess whether the base rate supports or undermines the original belief. The exercise isn't about proving yourself wrong — it's about noticing the gap between how confident you feel and how much evidence you actually have. Sometimes the base rate confirms your belief. Sometimes it doesn't. Both outcomes are useful."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**Base rate neglect** is the tendency to ignore background probabilities when evaluating specific evidence. Your brain prefers vivid, story-shaped information over dry statistics — and that preference leads to systematic errors in judgment.\n\nThe defense is a single question: **what's the base rate?** Before you evaluate any individual case, ask how common or rare the thing is in general. Then let the specific evidence move you from that starting point — not replace it.\n\nA 99% accurate test doesn't mean a 99% chance you're sick. A friend's startup success doesn't mean startups usually succeed. A scary news story doesn't mean the world is dangerous. In each case, the base rate tells a different story than the vivid evidence — and the base rate is almost always more reliable."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sunk Costs",
+      "slug": "sunk-costs",
+      "description": "Why 'I've already invested so much' is a trap — and why walking away is sometimes the smartest move.",
+      "sortOrder": 2,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "You're two hours into a bad movie. It's not getting better. But you think: *I've already invested two hours. Might as well finish it.*\n\nThat thought just cost you another hour of your life. And the logic that produced it is one of the most common reasoning errors humans make.\n\nThe **sunk cost fallacy** is the tendency to continue investing in something because of what you've already spent — time, money, effort, emotion — even when the future returns don't justify it. The past investment is \"sunk.\" It's gone regardless of what you do next. But your brain can't let it go.\n\nThis sequence is about why sunk costs are so hard to ignore and how to make decisions based on what's ahead, not what's behind."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## Why It's So Hard to Walk Away\n\nThe sunk cost fallacy isn't just bad math. It's driven by several psychological forces working together:\n\n**Loss aversion.** Losses feel roughly twice as painful as equivalent gains feel good. Walking away from a sunk cost *feels* like locking in a loss, even though the loss already happened. Continuing feels like you might still \"get your money's worth.\"\n\n**Commitment consistency.** Once you've publicly committed to something — a project, a relationship, a career path — admitting it's not working feels like admitting you were wrong. The longer you've been committed, the harder it is to reverse course without a painful identity renegotiation.\n\n**The narrative trap.** Humans are storytelling animals. \"I struggled but eventually succeeded\" is a much better story than \"I tried something, it didn't work, and I stopped.\" The sunk cost fallacy is partly a story preference — you keep going because quitting doesn't have a satisfying narrative arc.\n\nThese forces are why smart people stay in bad jobs, pour money into failing businesses, and finish bad movies. The reasoning error isn't complicated. The emotional machinery that sustains it is."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "You've been renovating a house for 18 months. You've spent $80,000 so far. A contractor tells you it will take another $60,000 and 6 months to finish. A realtor tells you the finished house will be worth $120,000.\n\nWhat's the rational way to think about this?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Finish it — you've already put in $80,000 and 18 months. Walking away now wastes all of that.",
+                "isCorrect": false,
+                "explanation": "This is the sunk cost fallacy in action. The $80,000 and 18 months are gone no matter what you do next. The only question that matters is: is spending $60,000 more to get a $120,000 house a good deal? That's a $60,000 investment for a $120,000 asset — which sounds fine. But notice how the framing changes when you strip away the sunk cost: you wouldn't describe it as 'protecting your $80,000 investment.' You'd describe it as 'buying a $120,000 house for $60,000.' That's the right frame."
+              },
+              {
+                "id": "b",
+                "text": "The $80,000 already spent is irrelevant. The only question is: is spending $60,000 to get a $120,000 house a good deal going forward?",
+                "isCorrect": true,
+                "explanation": "This is the correct frame. The past spending is sunk — it doesn't change whether the future investment makes sense. From here, you're deciding whether to spend $60,000 to acquire a $120,000 asset, which has a positive expected return. The decision might still be complicated by other factors (do you have $60,000? what else could you do with it? what if the estimate is wrong?) — but those are forward-looking questions. 'I've already spent $80,000' is not a reason to continue."
+              },
+              {
+                "id": "c",
+                "text": "Walk away — you're already $80,000 in the hole and throwing more money at it is foolish.",
+                "isCorrect": false,
+                "explanation": "This is the sunk cost fallacy in reverse — letting the past loss scare you away from a future gain. The $80,000 is gone either way. The question is whether spending $60,000 more to get $120,000 in value makes sense. In this case it probably does. Being burned by past spending is just as irrational as being anchored to it — both let the past control a decision that should be about the future."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## The Sunk Cost Test\n\nHere's a simple mental tool for catching the sunk cost fallacy in your own thinking:\n\n**Imagine you haven't started yet.** Strip away everything you've already invested. Knowing what you know now, would you start this project / relationship / investment from scratch today?\n\nIf yes — continue, but because the future looks good, not because the past demands it.\n\nIf no — the only thing keeping you in is the sunk cost. That's not a reason. That's an anchor.\n\nThis test is powerful because it separates two questions your brain naturally merges: \"was the original decision good?\" and \"is continuing good?\" These are independent questions. A great original decision can become a bad continuation. A bad original decision can still have a good path forward. The past doesn't determine the future — but the sunk cost fallacy makes it feel like it does."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou've been in a relationship for 7 years. You're not happy and haven't been for a while. When you think about leaving, the thought that keeps coming back is:\n\n> *\"But we've built so much together. Seven years is a long time. I can't just throw that away.\"*\n\nIs this the sunk cost fallacy?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Yes — 'seven years' is a sunk cost and shouldn't factor into whether the relationship is good going forward.",
+                "isCorrect": false,
+                "explanation": "This is technically correct about the fallacy but emotionally reductive in a way that misses something important. A seven-year relationship isn't just time spent — it may include a social network, shared commitments, deep knowledge of each other, and genuine love that's currently struggling. Some of those are sunk costs (time that's passed). Some are ongoing assets (shared community, mutual understanding) that would genuinely be lost by leaving. The skill isn't labeling everything a sunk cost — it's distinguishing past investment (sunk) from present value (real)."
+              },
+              {
+                "id": "b",
+                "text": "It's partly the sunk cost fallacy, but relationships are more complex — seven years also created real, ongoing value (shared history, mutual knowledge, community) that isn't 'sunk' in the same way money is.",
+                "isCorrect": true,
+                "explanation": "This is the nuanced read. The time itself is sunk — you can't get those years back regardless. But a long relationship also generates ongoing assets: deep mutual understanding, a shared social world, established patterns of support. Those aren't sunk costs — they're present-tense value that would be genuinely lost. The question becomes: does the present value of what you've built outweigh the present unhappiness? That's a forward-looking question, which is the right frame — but it's more complex than 'sunk cost, ignore it.'"
+              },
+              {
+                "id": "c",
+                "text": "No — relationships are different from financial investments and the sunk cost concept doesn't apply.",
+                "isCorrect": false,
+                "explanation": "The sunk cost fallacy absolutely applies to relationships. Staying in an unhappy relationship *because* you've been in it a long time — with no forward-looking reason to expect improvement — is the textbook definition. The fallacy doesn't stop being a fallacy because the domain is emotional. But the application requires more care than with money, because relationships carry ongoing value that's tangled up with the sunk investment."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## Where Sunk Cost Thinking Hides\n\nThe sunk cost fallacy is most dangerous when it doesn't look like a fallacy — when it's dressed up as virtue.\n\n**\"I'm not a quitter.\"** Persistence is admirable. But persistence in the wrong direction is just stubbornness. The sunk cost fallacy often hides behind identity: you're not continuing because the future is promising — you're continuing because quitting conflicts with who you think you are.\n\n**\"We owe it to the work we've already done.\"** You hear this in organizations all the time. A project is clearly failing, but the team has worked so hard that canceling it feels like betrayal. The work is honored by learning from it, not by continuing to pour resources into something that isn't working.\n\n**\"It would be a waste.\"** The waste already happened. Continuing doesn't un-waste the past investment — it just adds to the total. The only waste you can prevent is future waste.\n\n**\"We're so close.\"** Sometimes you are close. But \"closeness\" is also what every failing project feels like right before it asks for another extension. The question is whether \"close\" is based on evidence or on the discomfort of quitting."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of something in your life right now that you're continuing partly because of what you've already invested — a project, a subscription, a commitment, a habit, anything.\n\nApply the sunk cost test: if you hadn't already started, would you begin this today? Be honest. Then describe what's keeping you in — is it the future prospects, or the past investment?",
+            "sampleAnswer": "The most revealing responses are the ones where the answer is 'no, I wouldn't start this today' but you're still doing it. That gap between the rational assessment and the actual behavior is where the sunk cost fallacy lives. Seeing it clearly doesn't obligate you to change — sometimes there are other reasons to continue. But at least the real reason is visible."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\nThe **sunk cost fallacy** is continuing to invest in something because of past investment rather than future returns. It's driven by loss aversion, commitment consistency, and the human preference for stories where persistence pays off.\n\nThe defense is the sunk cost test: **would I start this today if I hadn't already started?** If the answer is no, the only thing keeping you in is the past — and the past is already spent.\n\nThe nuance is that not everything looks like a sunk cost is one. Relationships, skills, and communities generate ongoing value that's entangled with past investment. The skill is separating what's truly sunk (time, money already spent) from what's still producing value (connections, knowledge, infrastructure). Both are real. Only one should influence your decision."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Confirmation Bias",
+      "slug": "confirmation-bias",
+      "description": "Why you only see what you expect — and how your brain builds a case for what it already believes.",
+      "sortOrder": 3,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "You don't see the world as it is. You see the world as you are.\n\nThat's not a self-help platitude — it's a description of a measurable cognitive process called **confirmation bias**. Your brain preferentially seeks, notices, interprets, and remembers information that confirms what you already believe. Information that contradicts your beliefs gets filtered, reinterpreted, or forgotten.\n\nThis isn't something that happens to careless thinkers. It happens to everyone, including experts. Doctors who form an early hypothesis about a diagnosis notice symptoms that confirm it and overlook symptoms that don't. Investors who believe in a stock notice positive news and explain away negative news. You do this with your own beliefs, relationships, and worldview constantly.\n\nThe dangerous thing about confirmation bias is that it doesn't feel like bias. It feels like being right."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## The Three Layers\n\nConfirmation bias operates at three distinct levels:\n\n**Selective search.** You look for information that supports what you believe and don't look for information that challenges it. If you think a restaurant is good, you read the positive reviews. If you think it's bad, you seek out the negative ones. You're not lying to yourself — you're just not looking equally hard in both directions.\n\n**Selective interpretation.** The same evidence looks different depending on what you already believe. A study showing ambiguous results about a policy you support will seem \"promising.\" The identical study, if it's about a policy you oppose, will seem \"inconclusive.\" The data didn't change. Your prior belief changed how you read it.\n\n**Selective memory.** You remember confirmations better than disconfirmations. If you think your colleague is unreliable, you'll remember every time they were late and forget every time they delivered on time. Over time, your memory becomes a highlight reel of evidence for your existing beliefs.\n\nAll three layers work together to create a closed loop: you search for confirming evidence, interpret ambiguous evidence as confirming, and remember the confirmations. The result is that your confidence grows even when the actual evidence is mixed."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "You believe that remote workers are less productive than in-office workers. Your company publishes a report showing that remote workers complete 4% fewer tasks per week but report 15% higher satisfaction and 20% lower turnover.\n\nHow would confirmation bias affect how you read this report?",
+            "options": [
+              {
+                "id": "a",
+                "text": "You'd focus on the 4% productivity drop as proof you were right, and treat the satisfaction and turnover numbers as secondary or irrelevant.",
+                "isCorrect": true,
+                "explanation": "Confirmation bias doesn't make you ignore the other data entirely — it changes how much weight you give each piece. The 4% productivity drop confirms your belief, so it feels like the important finding. The satisfaction and turnover numbers challenge your belief, so they feel like footnotes — interesting but not central. Someone with the opposite belief would read the same report and lead with the satisfaction and turnover numbers. Same data, different emphasis, both driven by prior beliefs."
+              },
+              {
+                "id": "b",
+                "text": "You'd read the report objectively because it's data, not opinion.",
+                "isCorrect": false,
+                "explanation": "This is what everyone thinks they'd do and almost no one actually does. Research consistently shows that even when people try to be objective, prior beliefs shape which numbers they emphasize, what 'significant' means to them, and what caveats they notice. The data is objective. Your reading of it is not — and the gap between those two things is where confirmation bias lives."
+              },
+              {
+                "id": "c",
+                "text": "You'd change your mind because the data shows remote work has benefits.",
+                "isCorrect": false,
+                "explanation": "This underestimates how powerful confirmation bias is. The report contains mixed evidence — some supporting your view, some challenging it. People almost never change their minds when confronted with mixed evidence. Instead, they assimilate the confirming parts and explain away the challenging parts. Belief change usually requires overwhelming, unambiguous evidence — and even then, it's slow."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## The Hardest Part\n\nHere's what makes confirmation bias different from the other biases in this course: **knowing about it barely helps.**\n\nWith the sunk cost fallacy, you can learn a mental test and apply it. With base rate neglect, you can train yourself to ask \"what's the base rate?\" These are corrective tools that work because the error is in the reasoning process, and you can fix the process.\n\nConfirmation bias is different because it operates on your *perception*, not your reasoning. You don't choose to notice confirming evidence more — it just looks more salient to you. You don't choose to interpret ambiguous data as supporting your view — it genuinely looks supportive. The bias is upstream of your conscious thinking.\n\nThis doesn't mean you're helpless. But it means the tools are different. You can't think your way out of confirmation bias in real time. You can only build structures and habits that compensate for it."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou're hiring for your team. You interview a candidate who reminds you of yourself — same background, similar communication style, same sense of humor. The interview goes great.\n\nA colleague who also interviewed them says: \"I have concerns about their technical depth. They gave vague answers to my questions.\"\n\nWhat's the confirmation bias risk here?",
+            "options": [
+              {
+                "id": "a",
+                "text": "There's no confirmation bias — you connected genuinely with the candidate and that's a valid signal.",
+                "isCorrect": false,
+                "explanation": "Connection is a real signal, but here's the problem: the connection is partly based on similarity to you, which makes you predisposed to like them before they've demonstrated competence. That predisposition then becomes a lens: their answers seemed insightful (to you), the conversation flowed (for you), they seem like a great fit (with you). Your colleague's contrasting experience is data you'll be tempted to discount because it conflicts with the positive impression you've already formed."
+              },
+              {
+                "id": "b",
+                "text": "You formed a positive impression based on similarity, and now you'll unconsciously discount your colleague's concerns because they threaten that impression. The interview 'going great' might have been rapport, not evidence of competence.",
+                "isCorrect": true,
+                "explanation": "This is the honest read. The similarity created a positive prior. The good interview confirmed it. Now contradictory evidence from your colleague faces an uphill battle — not because it's wrong, but because your brain has already built a case. The 'great interview' might have been a genuine connection between two similar people, which tells you almost nothing about whether the candidate can do the job. This is confirmation bias compounded by affinity bias."
+              },
+              {
+                "id": "c",
+                "text": "Your colleague is probably right because they asked technical questions while you just chatted.",
+                "isCorrect": false,
+                "explanation": "Maybe — but this just swaps one bias for another. Deferring entirely to your colleague because their assessment was 'more technical' ignores that they might have their own biases (maybe they disliked the candidate's style). The right move isn't to pick one impression over the other. It's to recognize that your strong positive feeling makes you a less reliable judge of this particular candidate, and to seek additional data points that you can evaluate with less personal investment."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## Tools That Actually Help\n\nSince awareness alone doesn't fix confirmation bias, here are structural tools that do:\n\n**Seek disconfirmation deliberately.** Before making a decision, ask: \"What evidence would change my mind?\" Then go look for that evidence specifically. If you can't find it, your belief might be justified. If you can find it but you keep explaining it away, that's confirmation bias talking.\n\n**Use an outside view.** Ask someone who doesn't share your belief to evaluate the same evidence. Their reading will be biased too, but biased in a different direction — and the gap between your readings is informative.\n\n**Pre-commit to criteria.** Before evaluating something (a candidate, an investment, a plan), write down what \"good\" and \"bad\" look like in specific, measurable terms. Then evaluate against those criteria rather than your overall impression. This prevents the goalpost-shifting that confirmation bias enables.\n\n**Track your predictions.** Keep a record of what you predicted and what actually happened. Over time, you'll see where your beliefs outperform reality and where they don't. This is the slowest tool but the most powerful."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of a belief you hold strongly — about a person, a political issue, a professional practice, anything.\n\nNow answer honestly: what evidence would it take to change your mind? Be specific. Not \"I'd need really strong evidence\" — describe what that evidence would actually look like.\n\nIf you can't describe it, what does that tell you about the belief?",
+            "sampleAnswer": "This exercise is a diagnostic. If you can clearly describe what would change your mind, your belief is falsifiable — it's a real position held for reasons that can be examined. If you can't describe any evidence that would change your mind, your belief isn't really based on evidence in the first place — it's something closer to identity or values, where confirmation bias has the most room to operate unchecked."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**Confirmation bias** is the tendency to seek, interpret, and remember information that confirms existing beliefs. It operates at the level of perception — you don't choose to do it, and knowing about it only partially helps.\n\nThe core danger: confirmation bias makes you more confident over time even when the evidence is mixed, because you accumulate a biased sample of confirmations. Your certainty grows while your accuracy doesn't.\n\nThe tools are structural, not mental: seek disconfirmation deliberately, use outside perspectives, pre-commit to criteria, and track your predictions. These don't eliminate the bias — they build guardrails around it.\n\nThe most important question you can ask yourself: **what would change my mind?** If you can answer it specifically, you're thinking. If you can't, you're defending."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Availability Bias",
+      "slug": "availability-bias",
+      "description": "Why dramatic events distort your sense of risk — and why the things that scare you most aren't the things most likely to hurt you.",
+      "sortOrder": 4,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "Quick: which kills more people — shark attacks or falling coconuts?\n\nIf you hesitated, that's availability bias at work. Shark attacks are vivid, dramatic, and covered extensively by media. Coconut deaths are boring and unreported. Your brain uses **how easily something comes to mind** as a proxy for how likely it is to happen.\n\nFalling coconuts kill roughly 150 people per year worldwide. Shark attacks kill about 10. But you don't see coconut-warning segments on the news.\n\n**Availability bias** is the tendency to judge the probability of an event by how easily examples come to mind — which is heavily influenced by vividness, recency, and emotional intensity rather than actual frequency. It's why people fear plane crashes more than car accidents, even though driving is far more dangerous. It's why a single high-profile crime can make an entire city feel unsafe. And it's why whatever was in this morning's news feels like the most important thing in the world."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## The Availability Heuristic\n\nYour brain doesn't calculate probabilities. It estimates them using a shortcut called the availability heuristic: **if I can easily think of examples, it must be common.**\n\nThis shortcut works well when your experience is representative. If you can easily think of examples of your colleague being helpful, they probably are helpful — your memory is drawing on a real pattern.\n\nBut the shortcut breaks when certain events are more *memorable* without being more *frequent*. Several things make events disproportionately memorable:\n\n**Vividness.** A plane crash is more vivid than a car accident. A murder is more vivid than heart disease. Vivid events occupy more mental space regardless of their frequency.\n\n**Recency.** Whatever happened recently feels more likely. After a bridge collapse, every bridge feels dangerous — for about a month. Then the availability fades and so does the fear.\n\n**Emotional intensity.** Events that scared you, angered you, or moved you are easier to recall. This means your risk landscape is shaped by your emotional history, not by statistics.\n\n**Media coverage.** The news is an availability bias machine. It selects for unusual, dramatic, and threatening events — which are, by definition, unrepresentative of reality."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "After reading several news articles about home break-ins in your city, you decide to install an expensive security system. Crime statistics show that your neighborhood's burglary rate is actually lower than the city average and has been declining for five years.\n\nWhat happened?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Better safe than sorry — even if the statistics are good, the security system is still a reasonable precaution.",
+                "isCorrect": false,
+                "explanation": "\"Better safe than sorry\" is availability bias in a trench coat. It sounds prudent, but it's being driven by vivid news stories rather than actual risk assessment. The same logic could justify any precaution against any fear, regardless of probability. The question isn't whether security is bad — it's whether the news articles created a distorted sense of risk that led you to spend money solving a problem that statistics say you don't really have."
+              },
+              {
+                "id": "b",
+                "text": "Availability bias — the vivid, recent news articles made break-ins feel common and imminent, overriding the base rate information that says your actual risk is low and declining.",
+                "isCorrect": true,
+                "explanation": "The news articles made break-ins highly available in your memory. Each article reinforced the feeling that break-ins are frequent and close to home. The actual statistics — lower than average, declining — are boring and don't generate mental images of your door being kicked in. Your brain weighted the vivid information over the statistical information, and you made a financial decision based on a feeling of risk rather than actual risk."
+              },
+              {
+                "id": "c",
+                "text": "The statistics might be wrong or outdated — your instinct based on recent reports is probably more accurate.",
+                "isCorrect": false,
+                "explanation": "This is availability bias defending itself. When your intuition conflicts with data, the bias whispers: the data must be wrong. But five-year crime trends from your actual neighborhood are far more reliable than your impression based on a handful of news stories, which are selected precisely because they're unusual enough to be newsworthy. If break-ins were actually common, they wouldn't be news."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## The Media Amplification Loop\n\nAvailability bias and media coverage form a feedback loop that distorts public perception of risk:\n\n**Step 1:** A dramatic event happens (a terrorist attack, a school shooting, a plane crash).\n\n**Step 2:** Media covers it extensively because it's dramatic, emotional, and attention-capturing.\n\n**Step 3:** The extensive coverage makes the event highly available in everyone's memory.\n\n**Step 4:** People overestimate the probability of similar events because examples come to mind easily.\n\n**Step 5:** Public demand for coverage of similar events increases (because people are now worried about them).\n\n**Step 6:** Media covers more stories on the topic, further increasing availability.\n\nThe result: a single dramatic event can make an entire category of risk feel pervasive, even when the statistical probability hasn't changed at all. After a high-profile shark attack, beach attendance drops — not because sharks got more dangerous, but because one shark got more famous.\n\nThis loop drives policy too. Resources flow toward vivid, available risks (terrorism) and away from boring, unavailable ones (air pollution) — even when the boring risk kills orders of magnitude more people."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou're choosing between two job offers. Company A has been in the news recently for a round of layoffs. Company B hasn't been in the news at all.\n\nWhich is the safer bet for job security?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Company B — Company A just did layoffs, so it's clearly less stable.",
+                "isCorrect": false,
+                "explanation": "You just made a decision based on availability, not information. Company A's layoffs are in the news, so instability comes to mind easily. But layoffs can mean many things — the company might be restructuring for growth, cutting a failing division while the core is strong, or responding to a one-time market shift. Company B's absence from the news tells you nothing about its stability. It might be perfectly healthy or quietly circling the drain. 'Not in the news' is not the same as 'safe.'"
+              },
+              {
+                "id": "b",
+                "text": "You can't tell from this information — a recent news story about layoffs at one company and silence about another gives you almost no basis for comparing their actual stability.",
+                "isCorrect": true,
+                "explanation": "This is the clear-eyed read. The news story made Company A's risk vivid and available. Company B's risks are invisible — not because they don't exist, but because they haven't been publicized. To actually compare job security, you'd need financial data, growth trajectories, industry trends, and internal signals from both companies. One news story and the absence of news give you almost nothing to work with, despite the strong feeling that they do."
+              },
+              {
+                "id": "c",
+                "text": "Company A — they already did their layoffs, so you're probably safe now.",
+                "isCorrect": false,
+                "explanation": "This is an interesting but unreliable intuition. Sometimes layoffs do clear the deck. Sometimes they're the first round of several. You can't infer stability from a single event any more than you can infer instability from it. The core issue remains: you're making a career decision based on one vivid data point instead of a thorough investigation of both companies."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## Correcting for Availability\n\nYou can't stop vivid events from being vivid. But you can build the habit of checking your intuition against reality.\n\n**Ask: am I estimating frequency or recalling vividness?** When something feels likely, pause and ask whether you're basing that on how often it actually happens or how easily you can picture it happening. These are different things, and your brain conflates them.\n\n**Seek base rates.** This connects to what you learned in the first sequence. When a risk feels scary, look up how often it actually occurs. The number will almost always be lower than your gut estimate for dramatic risks and higher for boring ones.\n\n**Discount recency.** If your risk assessment changed because of something you recently read or saw, that change is probably too large. The world didn't get more dangerous this week — your memory just got updated with a vivid example.\n\n**Notice what's missing.** Availability bias is as much about what you *don't* think of as what you do. The risks that scare you are the ones you can imagine. The risks that actually threaten you might be invisible precisely because they're boring, gradual, or unglamorous."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of a risk you currently worry about — something that feels genuinely threatening to you. Now try to assess honestly: is your level of concern proportional to the actual probability, or has availability (news coverage, personal experience, vivid imagery) inflated it?\n\nThen identify a risk you probably *should* worry about more but don't — something statistically more likely but less vivid. Why do you think it gets less attention from your brain?",
+            "sampleAnswer": "The exercise works when it produces a genuine contrast. Common examples: people worry about violent crime (vivid, available) more than cardiovascular disease (boring, gradual) even though the second is far more likely to affect them. Or they worry about plane crashes more than texting while driving. The asymmetry is always the same: dramatic risks get amplified, mundane risks get ignored. Noticing your own version of this asymmetry is the first step toward correcting it."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**Availability bias** is the tendency to estimate probability based on how easily examples come to mind. Vivid, recent, emotional, and heavily covered events feel more likely than they are. Boring, gradual, and uncovered events feel less likely.\n\nThe media amplification loop makes this worse: dramatic events get covered, coverage increases availability, availability increases perceived risk, increased concern drives more coverage.\n\nThe defense is to distinguish between vividness and frequency. When something feels likely, check the numbers. When your sense of risk changes because of a single event or story, discount that change. And pay attention to the risks you're *not* worrying about — the boring, invisible ones that statistics say are more likely to affect you than the dramatic ones dominating your attention."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Anchoring",
+      "slug": "anchoring",
+      "description": "Why the first number you hear controls the negotiation — and how to stop giving away your power before the conversation starts.",
+      "sortOrder": 5,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "Here's an experiment. Two groups of people are asked: \"How old was Gandhi when he died?\"\n\nBut before answering, Group A is asked: \"Was Gandhi older or younger than 140 when he died?\" Group B is asked: \"Was Gandhi older or younger than 9 when he died?\"\n\nEveryone knows Gandhi wasn't 140 or 9. Both questions are absurd. But Group A's average guess was significantly higher than Group B's. The ridiculous number — the **anchor** — pulled their estimates in its direction, even though they consciously rejected it.\n\nThis is **anchoring**: the first piece of information you encounter disproportionately influences your subsequent judgment, even when that information is irrelevant, arbitrary, or obviously wrong.\n\nAnchoring is the reason the first price in a negotiation matters so much. It's why \"Was $200, now $99!\" makes you feel like you're getting a deal. And it's why the person who sets the frame usually wins the conversation."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## Why Anchoring Works\n\nAnchoring works because your brain doesn't evaluate things in absolute terms — it evaluates them relative to reference points. When you see a $50 shirt marked down from $120, you're not assessing whether a shirt is worth $50. You're assessing the gap between $120 and $50, and that gap feels like a gain.\n\nThe $120 might be completely fictional. The shirt might never have sold for $120. But once the number is in your head, it becomes the reference point against which $50 is evaluated. The anchor doesn't have to be real to be effective — it just has to be first.\n\nAnchoring operates in two ways:\n\n**Deliberate anchoring** is when someone sets the reference point strategically. A seller lists a house at $500,000 knowing it's worth $430,000. A recruiter asks about your current salary before making an offer. A consultant quotes a high number first, then \"comes down\" to the number they actually wanted.\n\n**Incidental anchoring** is when random numbers in your environment affect your judgment. Studies show that people bid more at auctions when they happen to see higher numbers on their bidding paddles. The number wasn't meaningful — but it still pulled their estimates."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "You're negotiating your salary for a new job. The recruiter asks: \"What are you currently making?\"\n\nWhat's the anchoring risk?",
+            "options": [
+              {
+                "id": "a",
+                "text": "If you share your current salary, it becomes the anchor — and the offer will be calibrated as a modest increase from that number, regardless of what the role is actually worth.",
+                "isCorrect": true,
+                "explanation": "Your current salary has nothing to do with what the new role is worth — but once it's on the table, it becomes the reference point. If you're making $70,000 and the role is worth $95,000, the recruiter will anchor to your $70,000 and offer something like $80,000. The gap feels like a raise to you, and it feels like a premium to them. The $95,000 the role is worth never enters the conversation because the anchor displaced it."
+              },
+              {
+                "id": "b",
+                "text": "There's no risk — they need to know your current salary to make a fair offer.",
+                "isCorrect": false,
+                "explanation": "They don't need your current salary to make a fair offer — they need to know what the role is worth and what the market pays for someone with your skills. Your current salary might reflect the market, but it might also reflect a previous employer's underpayment, a different cost-of-living area, or a different role entirely. Anchoring to your current number means the negotiation starts from where you've been, not where you should be."
+              },
+              {
+                "id": "c",
+                "text": "The risk is that they'll think you're too expensive if your current salary is high.",
+                "isCorrect": false,
+                "explanation": "That's a possible risk, but it's not the anchoring problem. The anchoring issue is directional: if your current salary is lower than the role's value, sharing it caps the negotiation below where it should be. If it's higher, it might price you out — but that's a different dynamic. The core anchoring risk is that a number irrelevant to the role's value takes over the conversation."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## Anchoring Beyond Numbers\n\nAnchoring isn't just about prices and salaries. It operates wherever a first impression sets the frame for subsequent evaluation.\n\n**In arguments:** The first framing of an issue anchors the debate. If someone says \"should we cut the program or keep wasting money on it?\" the word \"wasting\" anchors the discussion. Everyone who responds is now arguing relative to the premise that the spending is wasteful — even the people who disagree.\n\n**In planning:** The first time estimate for a project becomes the anchor. If someone says \"this should take about two weeks\" in a meeting, all subsequent estimates will cluster around two weeks — even if the project has nothing in common with a two-week effort.\n\n**In perception:** First impressions are anchors. If you meet someone at their best, everything they do afterward is evaluated relative to that high point. If you meet them at their worst, they're climbing uphill against the anchor of that first encounter.\n\nThe person who sets the anchor controls the range of discussion. Everything that follows is an adjustment from that starting point — and adjustments from anchors are consistently insufficient. People move away from anchors, but not far enough."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou're buying a used car. The seller asks $18,000. You know similar cars sell for $13,000-$15,000. You offer $12,000, thinking you'll meet in the middle around $15,000.\n\nWhat just happened?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Smart negotiation — you anchored low to counteract their high anchor.",
+                "isCorrect": false,
+                "explanation": "You think you're counteranchoring, but you're still playing within the seller's frame. 'Meeting in the middle' between $18,000 and $12,000 is $15,000 — the top of the market range. If the seller had listed at $16,000, your 'meet in the middle' strategy would have landed at $14,000. The seller's anchor moved your outcome even though you thought you were resisting it. Your $12,000 offer felt like a strong counter, but it was calculated relative to their $18,000."
+              },
+              {
+                "id": "b",
+                "text": "The seller's $18,000 anchor influenced your counteroffer — you calculated $12,000 relative to their price, not relative to the car's actual market value. The anchor worked even though you knew it was too high.",
+                "isCorrect": true,
+                "explanation": "Your $12,000 offer wasn't derived from the car's value — it was derived from the seller's asking price. You started with $18,000, decided you'd 'meet in the middle,' and reverse-engineered a low offer to get to $15,000. But $15,000 is the top of the market range, not the middle. If you'd ignored the anchor entirely and offered based purely on market value, you might have offered $13,000 and aimed for $14,000. The seller's inflated anchor moved your endpoint by $1,000 or more without you noticing."
+              },
+              {
+                "id": "c",
+                "text": "Nothing unusual — this is just normal negotiation.",
+                "isCorrect": false,
+                "explanation": "It is normal negotiation, and that's exactly the problem. 'Normal negotiation' is anchoring in action. The convention of meeting in the middle is a formula that rewards whoever sets the more extreme anchor. If the seller opens at $18,000 and you counter at $12,000, the midpoint is $15,000. If the seller had opened at $20,000, the midpoint would be $16,000. The seller controls your outcome by choosing their opening number. That's anchoring dressed up as convention."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## Defending Against Anchors\n\n**Recognize the anchor.** The first step is simply noticing when a number or frame is being placed in front of you. \"Was $200, now $99\" — the $200 is the anchor. \"This should take about six months\" — that's an anchor. \"Similar homes in the area have sold for...\" — anchor.\n\n**Generate your own anchor first.** If you're entering a negotiation, do your research and arrive with your own number. The person who speaks first in a negotiation has an advantage — but only if their number is well-informed. An anchor based on research beats an anchor based on wishful thinking.\n\n**Evaluate from zero, not from the anchor.** When someone gives you a number, consciously reset. Don't ask \"is $99 a good deal compared to $200?\" Ask \"is this item worth $99 to me, independent of any other number?\" This is surprisingly hard to do, but it disrupts the anchor's gravitational pull.\n\n**Watch for the frame, not just the number.** Anchoring isn't always numerical. \"Should we cut the program or reform it?\" anchors the discussion to the assumption that something needs to change. \"Is this candidate strong enough?\" anchors to doubt. The words around the number matter as much as the number itself."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of the last significant purchase or negotiation you made — a car, a salary, a contract, a major buy. Can you identify the anchor that was set? Who set it? Did it influence the final outcome?\n\nIf you set the anchor, how did you choose it? If the other party set it, how did it affect your subsequent offers or counteroffers?",
+            "sampleAnswer": "Strong responses trace the specific path from anchor to outcome. The most revealing cases are when you realize the anchor influenced you despite being aware of it. Anchoring is one of the hardest biases to overcome because even acknowledged anchors still exert pull. The exercise builds the habit of noticing the reference point — which is the prerequisite for resisting it."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**Anchoring** is the tendency for the first number or frame to disproportionately influence subsequent judgments. It works even when the anchor is arbitrary, irrelevant, or obviously wrong — your adjustments from the anchor are never large enough.\n\nAnchoring operates in negotiations (the first price sets the range), in planning (the first estimate sets expectations), in perception (first impressions set the baseline), and in framing (the first description of a problem sets the terms of the debate).\n\nThe defense: recognize anchors when they're set, generate your own anchors through independent research, evaluate from zero rather than from someone else's starting point, and watch for non-numerical anchoring in how questions and problems are framed."
+          }
+        }
+      ]
+    },
+    {
+      "title": "The Planning Fallacy",
+      "slug": "planning-fallacy",
+      "description": "Why everything takes longer than you think — and why you keep making the same mistake.",
+      "sortOrder": 6,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "The Sydney Opera House was supposed to take 4 years to build. It took 16. The budget was $7 million. The final cost was $102 million.\n\nThis isn't an unusual failure. This is the normal way projects go.\n\nThe **planning fallacy** is the systematic tendency to underestimate the time, cost, and risk of future actions while overestimating their benefits. It's not occasional optimism — it's a measurable, repeatable pattern that affects individuals, teams, organizations, and governments.\n\nYou've experienced it personally. Every time you thought a task would take an hour and it took three. Every time you started a project thinking it would be straightforward and hit complications you \"couldn't have predicted\" — except that you could have, because complications always happen.\n\nThe planning fallacy persists because each new plan feels different from the last one. \"This time I have a clearer picture.\" \"This project is simpler.\" \"I've learned from last time.\" And then it happens again."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## Why You're Bad at Estimating\n\nThe planning fallacy has several interacting causes:\n\n**Inside view thinking.** When you plan, you imagine the specific steps required and estimate each one. This feels thorough, but it's systematically biased because you imagine the ideal path — the version where nothing goes wrong. You estimate the time to write a report, but not the time to track down a missing data source, wait for feedback, redo the analysis when the requirements change, and fix the formatting when the template breaks.\n\n**Optimism bias.** You genuinely believe your future self will be more focused, more efficient, and encounter fewer obstacles than experience suggests. This isn't delusion — it's a baseline feature of human cognition. Most people overestimate their future performance across virtually every domain.\n\n**Anchoring to best-case.** Your first estimate becomes an anchor. Even when you \"add a buffer,\" you're adjusting from the best-case scenario rather than building up from the base rate of how long similar projects actually take.\n\n**Ignoring history.** You have a lifetime of evidence about how long things take you. You ignore it every time in favor of the plan-specific estimate. This is a specific form of base rate neglect: the base rate is your own track record, and you skip it."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "You estimate a home renovation will take 3 months and cost $30,000. Your contractor agrees these are reasonable estimates.\n\nA friend says: \"Every renovation I've seen takes twice as long and costs 50% more than planned. You should budget for 6 months and $45,000.\"\n\nWho should you listen to?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Your contractor — they're the expert and they've seen the specific details of your project.",
+                "isCorrect": false,
+                "explanation": "Contractors are subject to the planning fallacy too — in fact, they're often worse because they're motivated to give optimistic estimates (it wins them the job). The contractor's estimate is an inside view: based on this specific project's requirements, imagining the ideal path. Your friend's estimate is an outside view: based on how renovations actually go, regardless of what anyone planned. Research consistently shows the outside view is more accurate."
+              },
+              {
+                "id": "b",
+                "text": "Your friend — the outside view (how renovations generally go) is more reliable than the inside view (this specific renovation's plan), even though the inside view feels more informed.",
+                "isCorrect": true,
+                "explanation": "Your friend is applying what Daniel Kahneman calls 'reference class forecasting' — looking at the base rate for similar projects rather than the specifics of this one. Your project might be different. But the planning fallacy exists precisely because every project feels different while actually following the same pattern. Budgeting for 6 months and $45,000 isn't pessimism — it's realism calibrated to how renovations actually unfold."
+              },
+              {
+                "id": "c",
+                "text": "Split the difference — plan for 4.5 months and $37,500.",
+                "isCorrect": false,
+                "explanation": "Splitting the difference feels reasonable but it's just anchoring to the optimistic estimate and adjusting partway. If the base rate says renovations routinely exceed estimates by 50-100%, there's no principled reason to settle halfway between the optimistic plan and the realistic expectation. You'd be choosing a number because it feels like a compromise, not because evidence supports it."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## Reference Class Forecasting\n\nThe most effective antidote to the planning fallacy is called **reference class forecasting**. Instead of asking \"how long will *this* project take based on its specific steps?\" you ask \"how long do projects *like this* actually take?\"\n\nThe inside view says: \"I need to write 10 pages. I write about 2 pages per hour. So it should take 5 hours.\"\n\nThe outside view says: \"The last three times I wrote a 10-page document, it took me 8, 12, and 10 hours. So it will probably take about 10 hours.\"\n\nThe inside view misses the interruptions, the rewrites, the research detours, the motivation dips, and the unforeseen complications. The outside view captures all of them automatically, because they're included in the historical data.\n\nThe process is simple:\n\n**1.** Identify a reference class (\"projects like this one\").\n**2.** Find out how long/how much those projects actually took.\n**3.** Use that as your baseline estimate.\n**4.** Adjust only if you have specific, concrete reasons this project is different — not just a feeling that it's simpler."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou've been burned by the planning fallacy before. So this time, you're being careful. You estimate your project will take 2 weeks, then you add a 50% buffer, making it 3 weeks.\n\nIs this a good approach?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Yes — adding a buffer accounts for unexpected complications and shows you've learned from past mistakes.",
+                "isCorrect": false,
+                "explanation": "The buffer approach feels like wisdom, but it's still anchored to the inside view. You estimated 2 weeks using the same optimistic, plan-specific thinking that always underestimates. Then you added 50% to that biased baseline. If the real time is 5 weeks (common for the planning fallacy), your 'cautious' 3-week estimate is still wrong by two thirds. The buffer doesn't fix the bias — it slightly reduces its magnitude while preserving the underlying error."
+              },
+              {
+                "id": "b",
+                "text": "It's better than no buffer, but the buffer is applied to a biased estimate. You should instead look at how long similar past projects actually took and use that as the baseline, not your optimistic estimate plus a percentage.",
+                "isCorrect": true,
+                "explanation": "Adding a buffer to a bad estimate gives you a less-bad estimate. But the right approach is to start from a different place entirely: the actual duration of comparable past projects. If your last three similar projects took 4, 5, and 6 weeks, your baseline should be about 5 weeks — not 2 weeks plus a buffer. The reference class gives you a realistic starting point; the buffer approach gives you an optimistic starting point with a band-aid."
+              },
+              {
+                "id": "c",
+                "text": "No — buffers create slack that people fill with procrastination. A tight deadline is more motivating.",
+                "isCorrect": false,
+                "explanation": "This is a productivity myth dressed as a planning strategy. Yes, Parkinson's law suggests work expands to fill available time. But the planning fallacy isn't about motivation — it's about genuinely underestimating complexity. A tight deadline doesn't make complications disappear; it just means you miss the deadline and feel bad about it. The solution is accurate estimation, not motivational pressure applied to inaccurate estimates."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## The Premortem\n\nThere's a second tool, complementary to reference class forecasting, called a **premortem**.\n\nIn a postmortem, you analyze why something failed after it failed. In a premortem, you imagine the project has already failed *before you start* and ask: **why did it fail?**\n\nThis works because of a quirk in human cognition: you're much better at explaining past events than predicting future ones. By framing the failure as something that already happened, you unlock a different mode of thinking. Instead of optimistically planning forward, you're realistically explaining backward.\n\nA premortem on a renovation might produce: \"The permits took three months instead of three weeks. The contractor found structural damage that wasn't visible during inspection. The material costs increased because of supply chain delays. We changed the design mid-project after seeing the space differently.\"\n\nNone of these are surprising. All of them are predictable if you're willing to imagine failure instead of success. The premortem gives you permission to think about what usually goes wrong — and plan for it."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of a project or commitment you're currently planning or considering — at work, at home, in your personal life.\n\nDo a premortem: imagine it's six months from now and the project has failed or taken much longer than expected. Write down three specific, plausible reasons why it failed. Then ask: are you accounting for any of these in your current plan?",
+            "sampleAnswer": "The value is in specificity. Vague premortems ('something went wrong') don't help. Specific ones ('the client changed requirements in month two,' 'I underestimated how long the approval process takes,' 'I burned out in week three because I overcommitted') are actionable. If your premortem produces plausible failure modes you haven't planned for, that's the planning fallacy in real time — and you just caught it."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**The planning fallacy** is the systematic tendency to underestimate time, cost, and risk while overestimating benefits. It persists because each new plan feels unique while actually following the same pattern of optimistic inside-view thinking.\n\nTwo tools correct for it:\n\n**Reference class forecasting** — ask how long similar projects actually took, and use that as your baseline instead of your plan-specific estimate.\n\n**The premortem** — imagine the project has already failed and explain why. This unlocks realistic thinking about complications that optimistic planning suppresses.\n\nThe planning fallacy isn't about being bad at planning. It's about being human — your brain defaults to the ideal path, and the ideal path almost never materializes. The fix isn't pessimism. It's realism anchored to evidence rather than hope."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Risk vs. Uncertainty",
+      "slug": "risk-vs-uncertainty",
+      "description": "When you can calculate the odds and when you can't — and why confusing the two is dangerous.",
+      "sortOrder": 7,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "There's a crucial distinction most people never learn:\n\n**Risk** is when you don't know what will happen, but you know the probabilities. A fair coin has a 50% chance of heads. A well-studied surgery has a 3% complication rate. You can calculate.\n\n**Uncertainty** is when you don't know the probabilities either. Will this startup succeed? Will this career change work out? What will the economy look like in five years? You can't calculate — because the variables are too numerous, too interconnected, or too novel.\n\nMost of the decisions that actually matter in your life happen under uncertainty, not risk. But your brain — and most of the advice you receive — treats them as though they're risk problems with calculable odds.\n\nThis sequence is about the difference, why it matters, and how to make decisions when you genuinely can't calculate the odds."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## The Illusion of Calculability\n\nHumans are deeply uncomfortable with uncertainty. So we convert it into risk. We assign numbers to things that don't have numbers.\n\n\"There's a 70% chance this product launch will succeed.\" Where did 70% come from? Not from frequency data — this specific product has never been launched before. The number is a feeling translated into a percentage. It sounds precise, but it's not.\n\nThis conversion happens everywhere:\n\n**Finance:** Risk models assign probabilities to market events based on historical data. But financial crises are, by definition, events that the models didn't predict — because they arise from novel conditions, not from the historical distribution.\n\n**Medicine:** A doctor says \"there's a good chance this treatment will work.\" What does \"good chance\" mean — 60%? 80%? Based on trials with patients who may be very different from you? The precision implied by the language often exceeds the precision of the underlying knowledge.\n\n**Personal decisions:** \"I think there's about a 50/50 chance my relationship will last.\" This is a feeling, not a calculation. There's no reference class of identical relationships to draw from.\n\nThe danger isn't in estimating — you have to make decisions somehow. The danger is in confusing your estimate with actual knowledge."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "An investment advisor tells you:\n\n> *\"Based on our models, there's a 95% probability this portfolio will deliver positive returns over the next 5 years.\"*\n\nWhat's the right level of confidence in this number?",
+            "options": [
+              {
+                "id": "a",
+                "text": "High confidence — 95% is a strong probability and the advisor is using sophisticated models.",
+                "isCorrect": false,
+                "explanation": "The precision of the model masks the uncertainty underneath. Financial models are built on historical data and assumptions about how markets behave. In stable periods, they work well. But the events that destroy portfolios — recessions, crashes, geopolitical shocks — are precisely the events that violate the models' assumptions. A model that assigns 95% probability to positive returns has essentially assumed that nothing unprecedented will happen in the next five years. That's a prediction about uncertainty disguised as a calculation of risk."
+              },
+              {
+                "id": "b",
+                "text": "Moderate skepticism — the 95% is based on models that assume the future will resemble the past, which is a reasonable but not guaranteed assumption. The number describes calculated risk, but the real situation includes genuine uncertainty that no model captures.",
+                "isCorrect": true,
+                "explanation": "The 95% is the output of a model, not a fact about the world. The model captures risk (patterns that have historical precedent and measurable frequencies). It doesn't capture uncertainty (unprecedented events, structural changes, cascading failures). The number is useful as one input — it tells you what happens if the model's assumptions hold. It's dangerous as a promise — because the assumptions might not hold, and no probability is assigned to that possibility."
+              },
+              {
+                "id": "c",
+                "text": "Zero confidence — financial predictions are basically guesses.",
+                "isCorrect": false,
+                "explanation": "Overcorrection. Financial models aren't useless — they capture real patterns and provide useful base rates. The 95% tells you something meaningful about the historical performance of similar portfolios. The error is in treating a model's output as though it accounts for everything that could happen. Models are maps; they describe the terrain they were built to describe. They don't show you the terrain they weren't built for."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## Decision-Making Under Genuine Uncertainty\n\nWhen you can't calculate the odds, different tools are needed:\n\n**Robustness over optimization.** Under risk, you can optimize: find the strategy with the highest expected value. Under uncertainty, optimize for survival instead. Choose strategies that work across a wide range of scenarios, even if they're not optimal in any single scenario. A diversified portfolio isn't optimal — it's robust. A career with transferable skills isn't optimal — it's robust.\n\n**Reversibility.** When you can't know the outcome, prefer decisions that are easy to reverse. Taking a new job with a return option is better than burning bridges. Renting before buying in a new city is better than committing immediately. Reversible decisions let you gather information that irreversible decisions don't.\n\n**Optionality.** Choose paths that open up future options rather than closing them. A broad education creates more options than a narrow one. Saving money creates options that spending doesn't. Under uncertainty, options are more valuable than plans because plans assume a future you can't predict.\n\n**Small bets.** Instead of making one large bet on an uncertain outcome, make many small bets. Most will fail. Some will succeed. You learn from every outcome. This is how venture capital works, and it's a reasonable model for personal decision-making under uncertainty."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 4,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou're deciding between two career moves:\n\n**Option A:** Join a well-established company in your field. Predictable salary, clear advancement path, stable industry.\n\n**Option B:** Join an early-stage startup in a new industry. Higher potential upside, but the company might fail within two years.\n\nWhich is the better decision framework?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Option A is clearly safer and therefore better — established company, stable industry, predictable outcomes.",
+                "isCorrect": false,
+                "explanation": "Option A looks like a risk decision (calculable, precedented) but it contains uncertainty too. 'Stable industry' can change. 'Clear advancement path' depends on factors you can't predict (management changes, market shifts, your own evolving interests). The feeling of safety is partly an illusion created by familiarity. Option A isn't risk-free — its uncertainties are just less visible."
+              },
+              {
+                "id": "b",
+                "text": "Neither option eliminates uncertainty. The better framework is to evaluate reversibility, optionality, and what you learn from each path — not to compare their apparent 'safety.'",
+                "isCorrect": true,
+                "explanation": "Both options involve genuine uncertainty — you can't calculate the probability of either path working out. So the question shifts from 'which has better odds' to 'which gives me better tools for navigating the unknown.' Can you leave the startup if it fails and return to your field? (Reversibility.) Does the startup expose you to skills and networks that create future options? (Optionality.) Which path teaches you more about what you actually want? (Information value.) These questions are more useful than trying to calculate uncalculable odds."
+              },
+              {
+                "id": "c",
+                "text": "Option B is better because higher risk means higher reward.",
+                "isCorrect": false,
+                "explanation": "The 'higher risk, higher reward' principle applies to calculable risk — like investing in stocks versus bonds, where historical returns compensate for historical volatility. A startup isn't calculable risk. It's uncertainty. There's no reliable relationship between the uncertainty of a startup and its reward, because the variables are too novel and interconnected to model. Some very uncertain bets pay off enormously. Many pay off nothing. The slogan doesn't help you tell them apart."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 5,
+          "content": {
+            "body": "## Knowing What You Don't Know\n\nThe most important skill in reasoning under uncertainty is calibrating your own ignorance.\n\nThree levels of not-knowing:\n\n**Known unknowns.** You know what you don't know. \"I don't know whether this treatment will work, but I can research it.\" This is the most comfortable type of ignorance because it has a clear remedy: get more information.\n\n**Unknown unknowns.** You don't know what you don't know. These are the factors that blindside you — the competitor you didn't see coming, the health condition you didn't know existed, the market shift that nobody predicted. You can't prepare for specific unknown unknowns, but you can prepare for the *category* by building robustness and maintaining reserves.\n\n**Unknowables.** Some things aren't just unknown — they're unknowable in principle. You cannot know whether your career choice will make you happy in 20 years because the future you who will experience it doesn't exist yet. Decisions about the deep future are always made under uncertainty, and pretending otherwise is false precision.\n\nMaturity in decision-making isn't having better answers. It's having a clearer picture of which questions can be answered, which can be estimated, and which must simply be navigated."
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think of an important decision you're facing or have recently made. Is it a **risk** decision (you can reasonably estimate the probabilities) or an **uncertainty** decision (the probabilities aren't calculable)?\n\nIf it's uncertainty, which of the tools — robustness, reversibility, optionality, small bets — could you apply? How would that change your approach compared to trying to calculate the 'right' answer?",
+            "sampleAnswer": "The exercise works when it shifts thinking from 'what's the probability of success' to 'how do I navigate well regardless of the outcome.' Most important personal decisions — career changes, relationships, moves, major investments — are uncertainty decisions disguised as risk decisions. Recognizing this changes the strategy from 'pick the option with the best odds' to 'pick the option that leaves you best positioned regardless of how things unfold.'"
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## What You Learned\n\n**Risk** is when the probabilities are known or estimable. **Uncertainty** is when they're not. Most important decisions involve uncertainty, but people treat them as risk because assigning numbers feels better than admitting you don't know.\n\nUnder risk: optimize for the highest expected value.\nUnder uncertainty: optimize for robustness, reversibility, optionality, and learning.\n\nThe deepest skill is calibrating your ignorance — knowing whether you're dealing with known unknowns (researchable), unknown unknowns (prepare by building resilience), or unknowables (navigate rather than predict).\n\nFalse precision is more dangerous than acknowledged uncertainty. A confident wrong number does more damage than an honest 'I don't know' — because the number gets acted on while the admission of ignorance prompts the caution that the situation actually requires."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Decision Hygiene",
+      "slug": "decision-hygiene",
+      "description": "Practical frameworks for making better calls — putting everything together.",
+      "sortOrder": 8,
+      "published": true,
+      "steps": [
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 0,
+          "content": {
+            "body": "You've now learned about six specific ways your brain misleads you when making decisions: ignoring base rates, honoring sunk costs, confirming what you already believe, overweighting vivid information, anchoring to first numbers, and underestimating how long things take.\n\nKnowing about them helps. But knowledge alone doesn't reliably change behavior — especially for biases that operate below conscious awareness.\n\nThis final sequence is about **decision hygiene**: practical routines and structures that reduce the influence of cognitive biases without requiring you to catch each bias in real time. Think of it like hand-washing — you don't identify specific germs before washing. You build a habit that protects you broadly.\n\nGood decision-making isn't about being smarter. It's about having better processes."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 1,
+          "content": {
+            "body": "## Principle 1: Separate Information from Decision\n\nOne of the most powerful decision hygiene practices is separating the phase where you gather information from the phase where you decide.\n\nWhen these are blended — when you're forming a judgment while simultaneously collecting evidence — confirmation bias has maximum leverage. You form an early impression and then unconsciously filter everything that follows.\n\nThe alternative: gather first, decide later.\n\n**In hiring:** Have each interviewer write their assessment independently before discussing the candidate. The moment you hear a colleague's opinion, your reading of the same evidence shifts.\n\n**In diagnosis:** List all the symptoms before proposing a diagnosis. If you name the diagnosis early, you'll see confirming symptoms everywhere.\n\n**In personal decisions:** Write down all the relevant factors before weighing them. If you start by leaning toward an answer, your \"analysis\" becomes a justification exercise.\n\nThe goal isn't perfect objectivity — that's impossible. The goal is reducing the contamination between evidence and conclusion."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 2,
+          "content": {
+            "prompt": "Your team needs to decide whether to launch a product feature. The CEO has already publicly said she's excited about it. In the meeting, she asks for everyone's honest assessment.\n\nWhat's the decision hygiene problem?",
+            "options": [
+              {
+                "id": "a",
+                "text": "The CEO's public enthusiasm is an anchor — everyone's 'honest assessment' will be pulled toward agreement because the boss already stated her position. Honest dissent requires contradicting a power figure in public.",
+                "isCorrect": true,
+                "explanation": "This is multiple biases converging. The CEO's enthusiasm is an anchor (subsequent assessments adjust from her positive frame). It triggers social conformity (disagreeing with the boss is costly). And it enables confirmation bias (people will unconsciously emphasize evidence that supports the CEO's position). Decision hygiene says: collect assessments before the most influential person speaks. Once the anchor is set, the discussion isn't a discussion — it's a negotiation with the boss's opinion."
+              },
+              {
+                "id": "b",
+                "text": "There's no problem — the CEO asked for honest input, which means people will give it.",
+                "isCorrect": false,
+                "explanation": "Asking for honesty doesn't produce it when the incentive structure punishes dissent. The CEO might genuinely want honest feedback. But she's also the person who sets salaries, assigns projects, and determines promotions. Even well-intentioned leaders who ask for honest input don't get it when they've anchored the conversation by stating their own position first. Structure matters more than intention."
+              },
+              {
+                "id": "c",
+                "text": "The problem is that the CEO should stay out of product decisions.",
+                "isCorrect": false,
+                "explanation": "The CEO's involvement isn't the problem — it's the sequence. A CEO who gathers independent assessments before sharing her own view gets better information than one who shares first and asks second. The issue is process design, not participation. Leaders can and should be involved in decisions. They just shouldn't anchor them before the data is in."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 3,
+          "content": {
+            "body": "## Principle 2: Use the Outside View First\n\nYou've encountered this idea in multiple sequences: the outside view (how things generally go for situations like this) is usually more accurate than the inside view (your detailed analysis of this specific situation).\n\nMake it a habit:\n\n**Before estimating time:** \"How long have similar projects taken?\" before \"How long will this specific project take?\"\n\n**Before evaluating an investment:** \"What's the base rate of success for this type of investment?\" before \"Why is this particular one special?\"\n\n**Before making a prediction:** \"What usually happens in situations like this?\" before \"What's my theory about what will happen?\"\n\nThe inside view isn't worthless — it's just systematically overconfident. Start with the outside view, then adjust based on genuinely distinctive features of your specific situation. This ordering matters because the outside view provides a realistic anchor, whereas starting with the inside view provides an optimistic one."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 4,
+          "content": {
+            "body": "## Principle 3: Make Reversible Decisions Fast, Irreversible Decisions Slow\n\nNot all decisions deserve the same process. Decision hygiene includes knowing how much process a decision warrants.\n\n**Reversible decisions:** which restaurant to try, which task to tackle first, which email to send, whether to try a new tool. Make these quickly. The cost of being wrong is low because you can course-correct. Spending excessive time on reversible decisions is its own failure mode — it wastes your decision-making energy on things that don't matter much.\n\n**Irreversible decisions:** accepting a job offer, signing a lease, getting married, committing to a major investment. Slow down. Apply the full toolkit: outside view, premortem, independent evaluation, disconfirmation search. The cost of being wrong is high and recovery is difficult.\n\nMany decisions that feel irreversible are actually more reversible than you think. And some decisions that feel reversible have surprisingly sticky consequences. Part of decision hygiene is accurately classifying which category you're in before choosing your process."
+          }
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "sortOrder": 5,
+          "content": {
+            "prompt": "**This one is designed to fool you.**\n\nYou've been offered a job at a salary that feels slightly low. You've researched the market, consulted friends, done a premortem, and slept on it. You're now 80% sure you should negotiate for more money but 20% worried it might backfire.\n\nWhat should you do?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Do more research until you're more certain. 80% isn't confident enough for a risky move.",
+                "isCorrect": false,
+                "explanation": "This is analysis paralysis disguised as caution. You've already done the homework: market research, outside perspectives, premortem, time to reflect. More research at this point is unlikely to move you from 80% to 95% — it's more likely to produce conflicting information that makes you less certain. At some point, decision hygiene means acting on good-enough information rather than seeking perfect information."
+              },
+              {
+                "id": "b",
+                "text": "Negotiate. You've done thorough due diligence, and 80% confidence after a rigorous process is a strong signal. The remaining 20% uncertainty is a feature of reality, not a sign you need more data.",
+                "isCorrect": true,
+                "explanation": "Decision hygiene doesn't eliminate uncertainty — it ensures you've done what you can to reduce bias. You've used the outside view (market research), sought disconfirmation (consulting friends), done a premortem, and slept on it. The 20% uncertainty is honest and appropriate — no amount of additional research will make a salary negotiation risk-free. Acting on a well-examined 80% is better than waiting for a certainty that never arrives."
+              },
+              {
+                "id": "c",
+                "text": "Accept the offer as-is. The risk of the negotiation backfiring isn't worth the potential gain.",
+                "isCorrect": false,
+                "explanation": "This is loss aversion overriding your analysis. You've done the work and arrived at 80% confidence that negotiating is the right move. Choosing not to negotiate because of a 20% worry — after thorough due diligence — means your fear is overruling your process. That's exactly what decision hygiene is designed to prevent. The process exists so that you trust it when emotions push the other way."
+              }
+            ],
+            "shuffleOptions": false
+          }
+        },
+        {
+          "type": "FREE_RESPONSE",
+          "sortOrder": 6,
+          "content": {
+            "prompt": "Think about how you currently make important decisions. Do you have a process, or do you go with your gut?\n\nDesign a brief personal decision-making checklist — 3 to 5 questions you would ask yourself before any important decision. Draw on what you've learned in this course. The checklist should be short enough that you'd actually use it.\n\nThen test it: apply the checklist to a decision you're currently facing. Does it change anything?",
+            "sampleAnswer": "An effective personal checklist might include: (1) What's the base rate for outcomes like this? (2) Am I continuing because the future looks good or because I've already invested? (3) What would change my mind? (4) What does someone who disagrees with me see that I don't? (5) Is this reversible or irreversible? The checklist works when it surfaces a blind spot you hadn't noticed — which it usually does, because the biases in this course are universal."
+          }
+        },
+        {
+          "type": "INSTRUCTION",
+          "sortOrder": 7,
+          "content": {
+            "body": "## Course Complete\n\nYou've learned six cognitive biases and a set of practical tools to counteract them:\n\n**Base rate neglect** → Ask: what's the base rate?\n**Sunk cost fallacy** → Ask: would I start this today?\n**Confirmation bias** → Ask: what would change my mind?\n**Availability bias** → Ask: am I estimating frequency or recalling vividness?\n**Anchoring** → Evaluate from zero, not from someone else's number.\n**Planning fallacy** → Use the outside view and the premortem.\n\nPlus the meta-tools: distinguish risk from uncertainty, separate information from decision, make reversible decisions fast and irreversible decisions slow.\n\nYou won't catch every bias in real time. Nobody does. But a decision-making process that accounts for these patterns will, over time, produce measurably better outcomes than gut instinct alone. Not because your gut is bad — but because your gut has blind spots, and now you know where they are."
+          }
+        }
+      ]
+    }
+  ]
+}
